@@ -1,0 +1,16 @@
+{
+  "name": "discordjs",
+  "version": "1.0.0",
+  "description": "a bot for teamhope",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kacper Mura",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "riot-api-nodejs": "^2.1.0",
+    "superagent": "^3.8.3"
+  }
+}
