@@ -48,7 +48,6 @@ bot.on("message", async message => {
     }
 
     let word_list = ['ddos', 'hrnshn', 'arschloch', 'hurensohn', 'nazi', 'hitler', 'heil hitler', 'wixxer', 'huso', 'e2', 'ez', 'leck mich', 'fotze', 'fggt', 'faggot', 'geh sterben', 'get ddos', 'fick', 'lppn', 'lauch', 'fuck', 'hure', 'easy', 'missgeburt', 'hoden', 'anal', 'sex', 'krampe', 'penis', 'vagina', 'dildo', 'nzi', 'hh']
-    let foundword = false;
     
     for(var i in word_list) {
         if(message.content.toLowerCase().includes(word_list[i].toLowerCase())) {
