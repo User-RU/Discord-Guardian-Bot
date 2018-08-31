@@ -3,10 +3,10 @@ Finally, the Guardian Discord Bot has been successfully rewritten and has now be
 
 ## Usage
 First, download the Guardian Bot with the command:
-> git clone https://github.com/VocalZero/Guardian-Bot.git
+> git clone https://github.com/VocalZero/Discord-Guardian-Bot.git
 
 Now you have successfully downloaded the Guardian Bot. Now you go into the folder of the Guardin Bot
-> cd Guardian-Bot
+> cd Discord-Guardian-Bot
 
 Install all the necessary npm dependencies with the command:
 > npm install
