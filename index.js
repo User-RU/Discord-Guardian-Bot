@@ -12,13 +12,13 @@ fs.readdir("./commands", (err, files) => {
 
 
     if(jsfile.length  <= 0) {
-        console.log("[ERROR] Es wurden keine Befehle gefunden!")
+        console.log("[ERROR] No commands were found!")
         return;
     }
 
     jsfile.forEach((commandfile, i) => {
         let props = require(`./commands/${commandfile}`);
-        console.log(`[INFO] Befehl ${commandfile} wurde erfolgreich geladen!`);
+        console.log(`Command ${commandfile} has been successfully loaded!`);
         bot.commands.set(props.help.name, props);
     });
 });
@@ -26,8 +26,8 @@ fs.readdir("./commands", (err, files) => {
 
 // START DISCORDBOT
 bot.on("ready", async () => {
-    console.log(`[INFO] Guardian unterstützt ${bot.guilds.size} Server!`);
-    bot.user.setActivity(`${bot.guilds.size} Server | ${bot.users.size} Benutzer | !help`);
+    console.log(`[INFO] Guardian supports now ${bot.guilds.size} server!`);
+    bot.user.setActivity(`${bot.guilds.size} Server | ${bot.users.size} Users | !help`);
 });
 // END DISCORDBOT
 
@@ -52,7 +52,7 @@ bot.on("message", async message => {
     for(var i in word_list) {
         if(message.content.toLowerCase().includes(word_list[i].toLowerCase())) {
             message.delete();
-            message.author.send('Deine Nachricht wurde entfernt da du ein Verbotenes World verwendet hast!');
+            message.author.send('Your message has been removed because you have used a Forbidden World!');
         }
     }
 
@@ -67,4 +67,4 @@ bot.on("message", async message => {
 });
 // END EVENT MESSAGE
 
-bot.login("NDgyMzAxODkxODEzMDQ4MzQx.DmC7qw.fOwjgCFbYXElbb0cKFUpNXd_kcI");
+bot.login("Here comes your bot token!");

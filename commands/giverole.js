@@ -6,22 +6,22 @@ module.exports.run = async (bot, message, args) => {
     let role = message.guild.roles.find(`name`, mrole);
 
     if(!message.member.hasPermission("MANAGE_ROLES")) {
-        message.reply('Du benötigst die Berechtigung "MANAGE_ROLES"!');
+        message.reply('You need the permission "MANAGE_ROLES"!');
         return;
     }
 
     if(!user) {
-        message.reply('Benutzer wurde nicht gefunden!');
+        message.reply('User was not found!');
         return;
     }
 
     if(!mrole) {
-        message.reply('Role wurde nicht angegeben!');
+        message.reply('Role was not specified!');
         return;
     }
 
     if(!role) {
-        message.reply('Role wurde nicht gefunden!');
+        message.reply('Role was not found!');
         return;
     }
 
@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
         user.addRole(role.id);
     }
 
-    message.channel.send(`${user} hat die ${role} Role bekommen!`);
+    message.channel.send(`${user} got the ${role} Role!`);
 }
 
 module.exports.help = {

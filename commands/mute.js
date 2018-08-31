@@ -6,17 +6,17 @@ module.exports.run = async (bot, message, args) => {
     let toMute = message.guild.member(message.mentions.users.first())
     let muteRole = await message.guild.roles.find(r => r.name === roleName)
     if(!message.member.hasPermission("MODERATOR")) {
-        message.reply('Du benötigst die Berechtigung "MODERATOR"!');
+        message.reply('You need the permission "MODERATOR"!');
         return;
     }
 
     if(!toMute) {
-        message.reply('Benutzer wurde nicht angegeben!');
+        message.reply('User was not specified!');
         return;
     }
 
     if(!toMute.id == message.author.id) { 
-        message.reply('Du kannst dich nicht selbst muten!');
+        message.reply('You can not mute yourself!');
         return;
     }
 
@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
                 name: roleName,
                 color: 'black'
             })
-            console.log(`Mute Role wurde auf ${message.guild.name} erstellt!`)
+            console.log(`Mute Role was created on ${message.guild.name}!`)
     
             message.guild.channels.forEach(async (channel, id) => {
                 await channel.overwritePermissions(muteRole, {
@@ -44,7 +44,7 @@ module.exports.run = async (bot, message, args) => {
         toMute.removeRole(muteRole)
     } else {
         toMute.addRole(muteRole)
-        message.reply(`${toMute} wurde gemutet für ${ms(time, { long: true })}`);
+        message.reply(`${toMute} was muted for ${ms (time, {long: true})}`);
     }
     setTimeout(function() {
         toMute.removeRole(muteRole)

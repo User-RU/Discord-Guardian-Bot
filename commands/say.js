@@ -6,8 +6,8 @@ module.exports.run = async (bot, message, args) => {
         let saymessage = new Discord.RichEmbed()
             .setAuthor(message.guild.name, message.guild.iconURL)
             .setColor("#15f153")
-            .addField("Benutzer", message.author, true)
-            .addField("Nachricht", saymessage2, true)
+            .addField("User", message.author, true)
+            .addField("Message", saymessage2, true)
             .setTimestamp()
             .setFooter("Discord Guardian | guardian@vocalzero.de");
         message.delete().catch();
