@@ -23,7 +23,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("!support", "Fehler? Rechtschreibfehler? Schreib uns eine Nachricht")
         .addField("!takerole [Name] [Rolle]", "Einem Benutzer eine Rolle entfernen")
         .addField("!cold", "It's COLD!")
-        .addField("!dab", "   ")
+        .addField("!dab", "-/-")
         .addField("!sleep", "I'm going to sleep now, or a round is still going on.")
         .addField("!cool", "I'm cool. Are you cool?")
         .addField("!kick [Name]", "Kick a user off the server.")
