@@ -5,24 +5,24 @@ module.exports.run = async (bot, message, args) => {
     const member = message.guild.member(user);
 
     if(!message.member.hasPermission("KICK_MEMBERS")) {
-        message.reply('Du benötigst die Berechtigung "KICK_MEMBERS"!');
+        message.reply('You need the permission "KICK_MEMBERS"!');
         return;
     }
 
     if(!member.id == message.author.id) { 
-        message.reply('Du kannst dich nicht selbst muten!');
+        message.reply('You can not kick yourself!');
         return;
     }
 
     if(user) {
         if(member) {
             member.kick();
-            message.reply(`Der Benutzer ${user} wurde erfolgreich gebannt!`);
+            message.reply(`The user ${user} has been successfully kicked!`);
         } else {
-            message.reply(`Der Benutzer ${user} wurde nicht gefunden!`);
+            message.reply(`The user ${user} was not found!`);
         }
     } else {
-        message.reply(`Es wurde kein Benutzer angegeben!`);
+        message.reply(`No user was specified!`);
     }
 }
 
