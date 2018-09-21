@@ -19,7 +19,6 @@ module.exports.run = async (bot, message, args) => {
         .addField("!mute [Name] [Grund]", "Einen Benutzer stumschalten!")
         .addField("!neko", "SWEET")
         .addField("!party", "Feiern #Party")
-        .addField("!pat", "Hast du gut gemacht")
         .addField("!poke", "Hallo bist du da?")
         .addField("!support", "Fehler? Rechtschreibfehler? Schreib uns eine Nachricht")
         .addField("!takerole [Name] [Rolle]", "Einem Benutzer eine Rolle entfernen")
