@@ -2,10 +2,10 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     if(!message.member.hasPermission("MODERATOR")) {
-        return message.reply("Unfortunately, you have no rights to do this!");
+        return message.reply(`Du brauchst die Permission **"MODERATOR"** um **"!clear"** benutzen zu können!`);
     } else {
-        message.channel.bulkDelete(15).then(() => {
-            message.channel.send(`15 messages have been deleted!`);
+        message.channel.bulkDelete(100).then(() => {
+            message.channel.send(`100 Nachrichten wurden erfolgreich gelöscht!`);
         });
     }
 }

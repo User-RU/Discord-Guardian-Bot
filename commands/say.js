@@ -6,14 +6,14 @@ module.exports.run = async (bot, message, args) => {
         let saymessage = new Discord.RichEmbed()
             .setAuthor(message.guild.name, message.guild.iconURL)
             .setColor("#15f153")
-            .addField("User", message.author, true)
-            .addField("Message", saymessage2, true)
+            .addField("Benutzer", message.author, true)
+            .addField("Nachricht", saymessage2, true)
             .setTimestamp()
             .setFooter("Discord Guardian | guardian@vocalzero.de");
         message.delete().catch();
         message.channel.send(saymessage);
     } else {
-        message.reply("Leider hast du keine Rechte dies zu tun!");
+        message.reply(`Du brauchst die Permission **"MANAGE_MESSAGE"** um **"!say"** benutzen zu können!`);
     }
 }
 

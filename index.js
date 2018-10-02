@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const bot = new Discord.Client({disableEveryone: true});
+const DBL = require("dblapi.js");
+const dbl = new DBL('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ4MjMwMTg5MTgxMzA0ODM0MSIsImJvdCI6dHJ1ZSwiaWF0IjoxNTM4NDg3MTYzfQ.FVfm7L06Jcub3R81ZaHrtejJsEP34Z2GcLzCdlqHAJ8', bot);
 bot.commands = new Discord.Collection();
 
 // START COMMANDLOAD
@@ -26,8 +28,11 @@ fs.readdir("./commands", (err, files) => {
 
 // START DISCORDBOT
 bot.on("ready", async () => {
-    console.log(`[INFO] Guardian supports now ${bot.guilds.size} server!`);
-    bot.user.setActivity(`${bot.guilds.size} Server | ${bot.users.size} Users | !help`);
+    console.log(`[INFO] ${bot.guilds.size} Discord Server benutzen Discord Guardian!`);
+    bot.user.setActivity(`${bot.guilds.size} Server | ${bot.users.size} Benutzer | !help`);
+    dbl.on('posted', () => {
+        console.log('DiscordBots.org Stats wurden geupdatet!');
+    });
 });
 // END DISCORDBOT
 
@@ -52,7 +57,7 @@ bot.on("message", async message => {
     for(var i in word_list) {
         if(message.content.toLowerCase().includes(word_list[i].toLowerCase())) {
             message.delete();
-            message.author.send('Your message has been removed because you have used a Forbidden World!');
+            message.author.send('Deine Nachricht wurde entfernt da sie Verbotene Wörter enthält!');
         }
     }
 
@@ -67,4 +72,4 @@ bot.on("message", async message => {
 });
 // END EVENT MESSAGE
 
-bot.login("Here comes your bot token!");
+bot.login("     "); //<--- Discord Bot Token

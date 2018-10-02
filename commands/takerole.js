@@ -6,22 +6,22 @@ module.exports.run = async (bot, message, args) => {
     let role = message.guild.roles.find(`name`, mrole);
 
     if(!message.member.hasPermission("MANAGE_ROLES")) {
-        message.reply('You need the permission "MANAGE_ROLES"!');
+        message.channel.send(`Du brauchst die Permission **"MANAGE_ROLES"** um **"!takerole"** benutzen zu können!`);
         return;
     }
 
     if(!user) {
-        message.reply('User was not found!');
+        message.channel.send('Der Benutzer wurde nicht gefunden! Überprüfe deine Nachricht.');
         return;
     }
 
     if(!mrole) {
-        message.reply('Role was not specified!');
+        message.channel.send('Du hast die Rolle nicht angegeben! Überprüfe deine Nachricht.');
         return;
     }
 
     if(!role) {
-        message.reply('Role was not found!');
+        message.channel.send('Rolle wurde nicht gefunden!');
         return;
     }
 
@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
         user.removeRole(role.id);
     }
 
-    message.channel.send(`${user} has been removed from the ${role} Role!`);
+    message.channel.send(`**${user}** wurde von der Rolle **${role}** entfernt!`);
 }
 
 module.exports.help = {
